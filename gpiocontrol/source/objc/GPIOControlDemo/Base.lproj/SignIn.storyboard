@@ -40,8 +40,8 @@
                         <constraints>
                             <constraint firstItem="Cad-go-yhQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BST-hz-VUI"/>
                             <constraint firstItem="kCw-AA-EaR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="50" id="WMZ-ZG-3Iq"/>
+                            <constraint firstItem="Cad-go-yhQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="128" id="avE-u1-gzd"/>
                             <constraint firstItem="kCw-AA-EaR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="owS-Rq-p4G"/>
-                            <constraint firstItem="Cad-go-yhQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="128" id="ydN-s5-5VI"/>
                         </constraints>
                     </view>
                     <connections>
