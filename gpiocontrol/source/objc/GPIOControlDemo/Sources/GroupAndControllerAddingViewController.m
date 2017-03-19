@@ -8,6 +8,7 @@
 
 #import "GroupAndControllerAddingViewController.h"
 #import "ControllerAddingViewController.h"
+#import "CreateGroupViewController.h"
 
 @interface GroupAndControllerAddingViewController ()
 
@@ -20,6 +21,14 @@
 }
 
 #pragma mark - IBActions
+
+- (IBAction)presentAddGroupDialog:(id)sender {
+    CreateGroupViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"CreateGroupViewControllerID"];
+    vc.providesPresentationContextTransitionStyle = YES;
+    vc.definesPresentationContext = YES;
+    [self presentViewController:vc animated:YES completion:nil];
+}
+
 
 - (IBAction)presentAddControllerDialog:(id)sender {
     ControllerAddingViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ControllerAddingViewControllerID"];
