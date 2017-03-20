@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6296049F1E7EF99F00243613 /* CreateGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6296049E1E7EF99F00243613 /* CreateGroupViewController.m */; };
+		629604A71E7F6AAD00243613 /* ChooseTemplateImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 629604A61E7F6AAD00243613 /* ChooseTemplateImageViewController.m */; };
 		62A537151E7ED42400859898 /* DeviceConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62A537141E7ED42400859898 /* DeviceConnectionViewController.m */; };
 		62A537181E7ED52500859898 /* GroupAndControllerAddingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62A537171E7ED52500859898 /* GroupAndControllerAddingViewController.m */; };
 		62A5371B1E7ED75E00859898 /* ControllerAddingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62A5371A1E7ED75E00859898 /* ControllerAddingViewController.m */; };
@@ -28,6 +29,8 @@
 		3221EC16A20A7685362FC360 /* Pods-GPIOControlDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPIOControlDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GPIOControlDemo/Pods-GPIOControlDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		6296049D1E7EF99F00243613 /* CreateGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateGroupViewController.h; sourceTree = "<group>"; };
 		6296049E1E7EF99F00243613 /* CreateGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateGroupViewController.m; sourceTree = "<group>"; };
+		629604A51E7F6AAD00243613 /* ChooseTemplateImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseTemplateImageViewController.h; sourceTree = "<group>"; };
+		629604A61E7F6AAD00243613 /* ChooseTemplateImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseTemplateImageViewController.m; sourceTree = "<group>"; };
 		62A537131E7ED42400859898 /* DeviceConnectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceConnectionViewController.h; sourceTree = "<group>"; };
 		62A537141E7ED42400859898 /* DeviceConnectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceConnectionViewController.m; sourceTree = "<group>"; };
 		62A537161E7ED52500859898 /* GroupAndControllerAddingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupAndControllerAddingViewController.h; sourceTree = "<group>"; };
@@ -151,10 +154,12 @@
 				62A537141E7ED42400859898 /* DeviceConnectionViewController.m */,
 				62A537161E7ED52500859898 /* GroupAndControllerAddingViewController.h */,
 				62A537171E7ED52500859898 /* GroupAndControllerAddingViewController.m */,
-				62A537191E7ED75E00859898 /* ControllerAddingViewController.h */,
-				62A5371A1E7ED75E00859898 /* ControllerAddingViewController.m */,
 				6296049D1E7EF99F00243613 /* CreateGroupViewController.h */,
 				6296049E1E7EF99F00243613 /* CreateGroupViewController.m */,
+				62A537191E7ED75E00859898 /* ControllerAddingViewController.h */,
+				62A5371A1E7ED75E00859898 /* ControllerAddingViewController.m */,
+				629604A51E7F6AAD00243613 /* ChooseTemplateImageViewController.h */,
+				629604A61E7F6AAD00243613 /* ChooseTemplateImageViewController.m */,
 			);
 			name = DeviceManagement;
 			sourceTree = "<group>";
@@ -306,6 +311,7 @@
 				62E1D27D1E7AD2E9002DCD40 /* SignInViewController.m in Sources */,
 				62A537151E7ED42400859898 /* DeviceConnectionViewController.m in Sources */,
 				62A5371B1E7ED75E00859898 /* ControllerAddingViewController.m in Sources */,
+				629604A71E7F6AAD00243613 /* ChooseTemplateImageViewController.m in Sources */,
 				62E1D2771E7AC926002DCD40 /* AppDelegate.m in Sources */,
 				62CE350D1E6F449E00D302E8 /* main.m in Sources */,
 				62E1D2821E7B0454002DCD40 /* BaseNavigationViewController.m in Sources */,
