@@ -12,6 +12,7 @@
 @interface ControllerAddingViewController ()
 
 @property (weak, nonatomic) IBOutlet UIView *imageForPortsView;
+@property (weak, nonatomic) IBOutlet UIImageView *imageForPortsImageView;
 
 @end
 
@@ -30,6 +31,13 @@
                                                                  handler:^(UIAlertAction *action)
     {
         ChooseTemplateImageViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ChooseTemplateImageViewControllerID"];
+        __weak ControllerAddingViewController *wself = self;
+        vc.block = ^(UIImage *image)
+        {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                wself.imageForPortsImageView.image = image;
+            });
+        };
         vc.providesPresentationContextTransitionStyle = YES;
         vc.definesPresentationContext = YES;
         [self presentViewController:vc animated:YES completion:nil];

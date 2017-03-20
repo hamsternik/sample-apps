@@ -10,4 +10,6 @@
 
 @interface ControllerAddingViewController : UIViewController
 
+@property (strong, nonatomic) UIImage *imageForPorts;
+
 @end

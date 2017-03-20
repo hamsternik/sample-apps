@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void (^templateImageBlock)(UIImage *templateImage);
+
 @interface ChooseTemplateImageViewController : UIViewController
+
+@property (copy, nonatomic) templateImageBlock block;
 
 @end
