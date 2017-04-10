@@ -10,6 +10,8 @@
 
 @interface AddAlarmViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *errorLabel;
+
 @end
 
 @implementation AddAlarmViewController

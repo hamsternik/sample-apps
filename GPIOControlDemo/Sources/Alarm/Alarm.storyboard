@@ -279,15 +279,6 @@
                                     <constraint firstItem="QJR-0R-xHf" firstAttribute="leading" secondItem="QWA-yr-E70" secondAttribute="leading" constant="16" id="tAT-0m-J0e"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hOq-Xu-rB0" userLabel="Horizontal Underline View">
-                                <rect key="frame" x="0.0" y="200" width="375" height="1"/>
-                                <color key="backgroundColor" red="0.70980392160000005" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="TfG-zb-3zA"/>
-                                    <constraint firstAttribute="height" constant="1" id="Wtl-qR-Ecl"/>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="ozI-Qi-q6Z"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lob-BS-aM7" userLabel="Alarm new Container View">
                                 <rect key="frame" x="0.0" y="351" width="375" height="75"/>
                                 <subviews>
@@ -329,9 +320,25 @@
                                     <constraint firstItem="gKD-6e-8Ou" firstAttribute="top" secondItem="Lob-BS-aM7" secondAttribute="top" constant="8" id="yAb-wo-C6V"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hOq-Xu-rB0" userLabel="Horizontal Underline View">
+                                <rect key="frame" x="0.0" y="200" width="375" height="1"/>
+                                <color key="backgroundColor" red="0.70980392160000005" green="0.70980392160000005" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="TfG-zb-3zA"/>
+                                    <constraint firstAttribute="height" constant="1" id="Wtl-qR-Ecl"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="1" id="ozI-Qi-q6Z"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="One or more group had much by the time and iterations" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KHS-Q2-gRb">
+                                <rect key="frame" x="16" y="572.5" width="343" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                <color key="textColor" red="1" green="0.048731549678897257" blue="0.054619446107371905" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="SOr-0z-reo" firstAttribute="top" secondItem="KHS-Q2-gRb" secondAttribute="bottom" constant="16" id="38C-zC-BmL"/>
                             <constraint firstAttribute="trailing" secondItem="SOr-0z-reo" secondAttribute="trailing" id="4aw-Ok-jG2"/>
                             <constraint firstItem="hOq-Xu-rB0" firstAttribute="top" secondItem="6Vq-qE-Gnq" secondAttribute="bottom" id="7gt-pR-AJc"/>
                             <constraint firstItem="Lob-BS-aM7" firstAttribute="leading" secondItem="IZ0-To-ZE5" secondAttribute="leading" id="9A4-Kk-322"/>
@@ -340,8 +347,10 @@
                             <constraint firstItem="3di-qb-PHd" firstAttribute="leading" secondItem="IZ0-To-ZE5" secondAttribute="leading" id="GWi-pQ-YCf"/>
                             <constraint firstItem="6Vq-qE-Gnq" firstAttribute="top" secondItem="IZ0-To-ZE5" secondAttribute="top" id="GgU-HP-uWY"/>
                             <constraint firstItem="6Vq-qE-Gnq" firstAttribute="height" secondItem="IZ0-To-ZE5" secondAttribute="height" multiplier="0.3" id="HJp-Ff-pci"/>
+                            <constraint firstAttribute="trailing" secondItem="KHS-Q2-gRb" secondAttribute="trailing" constant="16" id="KuW-vO-c9E"/>
                             <constraint firstItem="hOq-Xu-rB0" firstAttribute="leading" secondItem="IZ0-To-ZE5" secondAttribute="leading" id="UQm-Tg-jVM"/>
                             <constraint firstItem="Lob-BS-aM7" firstAttribute="top" secondItem="QWA-yr-E70" secondAttribute="bottom" id="UrZ-O0-lUY"/>
+                            <constraint firstItem="KHS-Q2-gRb" firstAttribute="leading" secondItem="IZ0-To-ZE5" secondAttribute="leading" constant="16" id="afs-5c-QnA"/>
                             <constraint firstAttribute="trailing" secondItem="6Vq-qE-Gnq" secondAttribute="trailing" id="bew-rR-fjg"/>
                             <constraint firstItem="QWA-yr-E70" firstAttribute="top" secondItem="3di-qb-PHd" secondAttribute="bottom" id="bwe-PR-B02"/>
                             <constraint firstItem="zns-ue-qeg" firstAttribute="top" secondItem="SOr-0z-reo" secondAttribute="bottom" id="iN0-du-hzz"/>
@@ -353,10 +362,13 @@
                             <constraint firstItem="6Vq-qE-Gnq" firstAttribute="leading" secondItem="IZ0-To-ZE5" secondAttribute="leading" id="ypU-bU-g1M"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="errorLabel" destination="KHS-Q2-gRb" id="NW4-3y-11f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ut-he-a4e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="887" y="-90"/>
+            <point key="canvasLocation" x="887.20000000000005" y="-90.404797601199405"/>
         </scene>
     </scenes>
     <resources>
