@@ -17,6 +17,9 @@
 		62B261B01E9B117500A5321B /* Controller.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B261AF1E9B117500A5321B /* Controller.m */; };
 		62B261B31E9B137F00A5321B /* Alarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B261B21E9B137F00A5321B /* Alarm.m */; };
 		62B261B61E9B17DD00A5321B /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B261B51E9B17DD00A5321B /* Group.m */; };
+		62B261BC1E9B26D500A5321B /* Alarm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62B261BB1E9B26D500A5321B /* Alarm.storyboard */; };
+		62B261BF1E9B33C900A5321B /* AlarmListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B261BE1E9B33C900A5321B /* AlarmListViewController.m */; };
+		62B261C21E9B33DA00A5321B /* AddAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B261C11E9B33DA00A5321B /* AddAlarmViewController.m */; };
 		62CE350D1E6F449E00D302E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 62CE350C1E6F449E00D302E8 /* main.m */; };
 		62CE35161E6F449E00D302E8 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62CE35141E6F449E00D302E8 /* SignIn.storyboard */; };
 		62CE35181E6F449E00D302E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62CE35171E6F449E00D302E8 /* Assets.xcassets */; };
@@ -52,6 +55,11 @@
 		62B261B21E9B137F00A5321B /* Alarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Alarm.m; sourceTree = "<group>"; };
 		62B261B41E9B17DD00A5321B /* Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Group.h; sourceTree = "<group>"; };
 		62B261B51E9B17DD00A5321B /* Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Group.m; sourceTree = "<group>"; };
+		62B261BB1E9B26D500A5321B /* Alarm.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Alarm.storyboard; sourceTree = "<group>"; };
+		62B261BD1E9B33C900A5321B /* AlarmListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmListViewController.h; sourceTree = "<group>"; };
+		62B261BE1E9B33C900A5321B /* AlarmListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmListViewController.m; sourceTree = "<group>"; };
+		62B261C01E9B33DA00A5321B /* AddAlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAlarmViewController.h; sourceTree = "<group>"; };
+		62B261C11E9B33DA00A5321B /* AddAlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAlarmViewController.m; sourceTree = "<group>"; };
 		62CE35081E6F449E00D302E8 /* GPIOControlDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPIOControlDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62CE350C1E6F449E00D302E8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		62CE35151E6F449E00D302E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SignIn.storyboard; sourceTree = "<group>"; };
@@ -107,11 +115,16 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		62B261B71E9B233100A5321B /* Alarm */ = {
+		62B261BA1E9B26D500A5321B /* Alarm */ = {
 			isa = PBXGroup;
 			children = (
+				62B261BB1E9B26D500A5321B /* Alarm.storyboard */,
+				62B261BD1E9B33C900A5321B /* AlarmListViewController.h */,
+				62B261BE1E9B33C900A5321B /* AlarmListViewController.m */,
+				62B261C01E9B33DA00A5321B /* AddAlarmViewController.h */,
+				62B261C11E9B33DA00A5321B /* AddAlarmViewController.m */,
 			);
-			name = Alarm;
+			path = Alarm;
 			sourceTree = "<group>";
 		};
 		62CE34FF1E6F449E00D302E8 = {
@@ -169,7 +182,7 @@
 				62E1D2741E7AC926002DCD40 /* AppDelegate.m */,
 				62E1D27B1E7AD22B002DCD40 /* SignIn */,
 				62E1D27E1E7B03F0002DCD40 /* DeviceManagement */,
-				62B261B71E9B233100A5321B /* Alarm */,
+				62B261BA1E9B26D500A5321B /* Alarm */,
 				62B261A81E9B09EB00A5321B /* Model */,
 			);
 			path = Sources;
@@ -257,7 +270,7 @@
 				TargetAttributes = {
 					62CE35071E6F449E00D302E8 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = TVMFX8XPT9;
+						DevelopmentTeam = C5B4S79D6V;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -288,6 +301,7 @@
 				62CE351B1E6F449E00D302E8 /* LaunchScreen.storyboard in Resources */,
 				62E1D2851E7B07D7002DCD40 /* BaseNavigation.storyboard in Resources */,
 				62CE35181E6F449E00D302E8 /* Assets.xcassets in Resources */,
+				62B261BC1E9B26D500A5321B /* Alarm.storyboard in Resources */,
 				62E1D2881E7B1A9A002DCD40 /* DeviceManagement.storyboard in Resources */,
 				62E1D27A1E7AC981002DCD40 /* GoogleService-Info.plist in Resources */,
 				62CE35161E6F449E00D302E8 /* SignIn.storyboard in Resources */,
@@ -356,6 +370,8 @@
 				62E1D2771E7AC926002DCD40 /* AppDelegate.m in Sources */,
 				62CE350D1E6F449E00D302E8 /* main.m in Sources */,
 				62999A8A1E80263A00DEF9B8 /* TemplateImageCollectionViewCell.m in Sources */,
+				62B261BF1E9B33C900A5321B /* AlarmListViewController.m in Sources */,
+				62B261C21E9B33DA00A5321B /* AddAlarmViewController.m in Sources */,
 				62B261AB1E9B09EB00A5321B /* Device.m in Sources */,
 				62E1D2821E7B0454002DCD40 /* BaseNavigationViewController.m in Sources */,
 				62B261B61E9B17DD00A5321B /* Group.m in Sources */,
@@ -483,7 +499,7 @@
 			baseConfigurationReference = 3221EC16A20A7685362FC360 /* Pods-GPIOControlDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = TVMFX8XPT9;
+				DEVELOPMENT_TEAM = C5B4S79D6V;
 				INFOPLIST_FILE = GPIOControlDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -497,7 +513,7 @@
 			baseConfigurationReference = D8A8CA00D99CB8FD7B5A580A /* Pods-GPIOControlDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = TVMFX8XPT9;
+				DEVELOPMENT_TEAM = C5B4S79D6V;
 				INFOPLIST_FILE = GPIOControlDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
