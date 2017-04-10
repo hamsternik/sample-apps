@@ -16,5 +16,6 @@
 @property (readonly) NSInteger vectorID;
 @property (readonly, nonnull) NSString *portName;
 @property (readonly) BOOL isActive;
+@property (readonly) NSInteger ID;
 
 @end

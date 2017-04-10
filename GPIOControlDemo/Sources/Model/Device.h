@@ -18,5 +18,6 @@
 @property (readonly, nonnull) NSString *portID;
 @property (readonly) BOOL isTurnOn;
 @property (readonly) BOOL isLocked;
+@property (readonly) NSInteger ID;
 
 @end

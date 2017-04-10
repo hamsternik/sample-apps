@@ -10,41 +10,42 @@
 
 @interface Alarm ()
 
-@property (assign, nonatomic) NSInteger alarmID;
 @property (strong, nonatomic, nonnull) NSDate *time;
 @property (strong, nonatomic, nonnull) NSString *action;
 @property (strong, nonatomic, nonnull) NSString *name;
 @property (strong, nonatomic, nonnull) NSString *iteration;
 @property (assign, nonatomic) BOOL isActive;
+@property (assign, nonatomic) NSInteger ID;
 
 @end
 
 @implementation Alarm
 
-- (instancetype)initWithId:(NSInteger)alarmID time:(NSDate *)time action:(NSString *)action name:(NSString *)name iteration:(NSString *)iteration isActive:(BOOL)isActive
+- (instancetype)initWithTime:(NSDate *)time action:(NSString *)action name:(NSString *)name iteration:(NSString *)iteration isActive:(BOOL)isActive id:(NSInteger)ID
 {
     self = [super init];
     if (self) {
-        self.alarmID = alarmID;
         self.time = time;
         self.action = action;
         self.name = name;
         self.iteration = iteration;
         self.isActive = isActive;
+        self.ID = ID;
     }
     return self;
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"Alarm %p : alarmID %ld, time %@, action %@, name %@, iteration %@, isActive %@",
+    return [NSString stringWithFormat:@"Alarm %p : time %@, action %@, name %@, iteration %@, isActive %@, ID %ld",
             self,
-            self.alarmID,
             self.time,
             self.action,
             self.name,
             self.iteration,
-            self.isActive ? @"YES" : @"NO"];
+            self.isActive ? @"YES" : @"NO",
+            self.ID
+            ];
 }
 
 @end

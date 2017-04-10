@@ -20,8 +20,8 @@
 @property (readonly, nonnull) NSString *portStatus;
 @property (readonly, nonnull) NSString *power;
 
-@property (readonly) NSInteger ID;
 @property (readonly) BOOL isTurnOn;
+@property (readonly) NSInteger ID;
 
 @property (strong, nonatomic, nonnull) NSMutableArray<Group *> *groups;
 @property (strong, nonatomic, nonnull) NSMutableArray<Device *> *devices;

@@ -17,13 +17,14 @@
 @property (strong, nonatomic, nonnull) NSString *portID;
 @property (assign, nonatomic) BOOL isTurnOn;
 @property (assign, nonatomic) BOOL isLocked;
+@property (assign, nonatomic) NSInteger ID;
 
 @end
 
 
 @implementation Device
 
-- (instancetype)initWithName:(NSString *)name image:(UIImage *)image vectorID:(NSInteger)vectorID portTitle:(NSString *)portTitle portID:(NSString *)portID isTurnOn:(BOOL)isTurnOn isLocked:(BOOL)isLocked
+- (instancetype)initWithName:(NSString *)name image:(UIImage *)image vectorID:(NSInteger)vectorID portTitle:(NSString *)portTitle portID:(NSString *)portID isTurnOn:(BOOL)isTurnOn isLocked:(BOOL)isLocked id:(NSInteger)ID
 {
     self = [super init];
     if (self) {
@@ -34,13 +35,14 @@
         self.portID = portID;
         self.isTurnOn = isTurnOn;
         self.isLocked = isLocked;
+        self.ID = ID;
     }
     return self;
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"Device %p : name: %@, image: %@, portTitle: %@, portID: %@, vectorID: %ld, isTurnOn: %@, isLocked: %@",
+    return [NSString stringWithFormat:@"Device %p : name: %@, image: %@, portTitle: %@, portID: %@, vectorID: %ld, isTurnOn: %@, isLocked: %@, ID: %ld",
             self,
             self.name,
             self.image,
@@ -48,7 +50,8 @@
             self.portID,
             (long)self.vectorID,
             self.isTurnOn ? @"YES" : @"NO",
-            self.isLocked ? @"YES" : @"NO"
+            self.isLocked ? @"YES" : @"NO",
+            self.ID
             ];
 }
 
