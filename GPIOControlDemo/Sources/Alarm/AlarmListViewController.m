@@ -21,6 +21,8 @@ static NSString * const kDefaultAlarmDateFormat = @"HH:mm";
 @property (weak, nonatomic) IBOutlet UILabel *emptyListLabel;
 @property (weak, nonatomic) IBOutlet UITableView *alarmsTableView;
 
+@property (strong, nonatomic) NSDateFormatter *dateFormatter;
+
 @end
 
 
@@ -53,10 +55,7 @@ static NSString * const kDefaultAlarmDateFormat = @"HH:mm";
     
     Alarm *alarm = self.alarms[indexPath.row];
     
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
-    dateFormatter.dateFormat = kDefaultAlarmDateFormat;
-    cell.timeLabel.text = [dateFormatter stringFromDate:alarm.time];
+    cell.timeLabel.text = [self.dateFormatter stringFromDate:alarm.time];
     cell.actionLabel.text = alarm.actionTitle; // TOOD: FIX to work with UISegmented object
     cell.alarmNameLabel.text = alarm.name;
     cell.iterationStateLabel.text = alarm.iteration;
@@ -76,20 +75,21 @@ static NSString * const kDefaultAlarmDateFormat = @"HH:mm";
 
 - (IBAction)changeAlarmState:(id)sender
 {
-    UITableViewCell *selectedCell = (UITableViewCell *) [[sender superview] superview];
-    NSIndexPath *indexPath = [self.alarmsTableView indexPathForCell:selectedCell];
+#pragma mark - TODO
     UIButton *selectedButton = (UIButton *)sender;
+    NSIndexPath *indexPath = [self indexPathForPressedButton:sender];
     selectedButton.selected = !selectedButton.selected;
     [self updateAlarmState:selectedButton.selected forIndex:indexPath.row];
 }
 
 - (IBAction)addNewAlarm:(id)sender
 {
+    NSIndexPath *indexPath = [self indexPathForPressedButton:sender];
     AddAlarmViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:kAddAlarmViewControllerID];
     __weak AlarmListViewController *wself = self;
     vc.block = ^(Alarm *alarm){
         [wself.alarms addObject:alarm];
-        // TODO: Update UI
+        [wself reloadCellsForIndexPaths:@[indexPath]];
     };
     vc.providesPresentationContextTransitionStyle = YES;
     vc.definesPresentationContext = YES;
@@ -115,16 +115,16 @@ static NSString * const kDefaultAlarmDateFormat = @"HH:mm";
     self.alarmsTableView.dataSource = self;
     
     self.alarms = [NSMutableArray new];
+    
+    self.dateFormatter.timeZone = [NSTimeZone defaultTimeZone];
+    self.dateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+    self.dateFormatter.dateFormat = kDefaultAlarmDateFormat;
 }
 
 - (void)createStubAlarms
 {
     NSString *alarmTimeStr = @"12:40";
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    df.timeZone = [NSTimeZone defaultTimeZone];
-    df.dateFormat = kDefaultAlarmDateFormat;
-    NSDate *date = [df dateFromString:alarmTimeStr];
-    
+    NSDate *date = [self.dateFormatter dateFromString:alarmTimeStr];
     Alarm *first = [[Alarm alloc] initWithTime:date action:AlarmActionToggle name:@"Morning Alarm" iteration:@"Every day" isActive:YES ID:1];
     [self.alarms addObject:first];
 }
@@ -136,5 +136,30 @@ static NSString * const kDefaultAlarmDateFormat = @"HH:mm";
     [self.alarms replaceObjectAtIndex:row withObject:selectedAlarm];
 }
 
+- (UIColor *)colorForAction:(AlarmAction)action
+{
+    switch (action) {
+        case AlarmActionPowerOff:
+            return [UIColor redColor];
+        case AlarmActionPowerOn:
+            return [UIColor greenColor];
+        case AlarmActionToggle:
+            return [UIColor yellowColor];
+    }
+}
+
+- (void)reloadCellsForIndexPaths:(NSArray<NSIndexPath *> *)indexPaths
+{
+    __weak AlarmListViewController *wself = self;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [wself.alarmsTableView reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
+    });
+}
+
+- (NSIndexPath *)indexPathForPressedButton:(UIButton *)sender
+{
+    UITableViewCell *selectedCell = (UITableViewCell *) [[sender superview] superview];
+    return [self.alarmsTableView indexPathForCell:selectedCell];
+}
 
 @end
