@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Alarm.h"
 
 @interface AlarmListViewController : UIViewController
+
+@property (strong, nonatomic, nonnull) NSMutableArray<Alarm *> *alarms;
 
 @end

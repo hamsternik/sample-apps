@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Alarm.h"
+
+typedef void (^addAlarmBlock)(Alarm * _Nonnull);
 
 @interface AddAlarmViewController : UIViewController
+
+@property (copy, nonatomic, nullable) addAlarmBlock block;
 
 @end

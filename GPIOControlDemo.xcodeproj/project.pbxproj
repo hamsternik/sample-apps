@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		620BB15A1E9BC3CB00E0FEF4 /* InputAlarmNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 620BB1591E9BC3CB00E0FEF4 /* InputAlarmNameViewController.m */; };
+		621B9AE01E9BD276006404C3 /* AlarmTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 621B9ADF1E9BD276006404C3 /* AlarmTableViewCell.m */; };
 		6296049F1E7EF99F00243613 /* CreateGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6296049E1E7EF99F00243613 /* CreateGroupViewController.m */; };
 		629604A71E7F6AAD00243613 /* ChooseTemplateImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 629604A61E7F6AAD00243613 /* ChooseTemplateImageViewController.m */; };
 		62999A8A1E80263A00DEF9B8 /* TemplateImageCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 62999A891E80263A00DEF9B8 /* TemplateImageCollectionViewCell.m */; };
@@ -35,6 +37,10 @@
 
 /* Begin PBXFileReference section */
 		3221EC16A20A7685362FC360 /* Pods-GPIOControlDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPIOControlDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GPIOControlDemo/Pods-GPIOControlDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		620BB1581E9BC3CB00E0FEF4 /* InputAlarmNameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputAlarmNameViewController.h; sourceTree = "<group>"; };
+		620BB1591E9BC3CB00E0FEF4 /* InputAlarmNameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputAlarmNameViewController.m; sourceTree = "<group>"; };
+		621B9ADE1E9BD276006404C3 /* AlarmTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmTableViewCell.h; sourceTree = "<group>"; };
+		621B9ADF1E9BD276006404C3 /* AlarmTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmTableViewCell.m; sourceTree = "<group>"; };
 		6296049D1E7EF99F00243613 /* CreateGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateGroupViewController.h; sourceTree = "<group>"; };
 		6296049E1E7EF99F00243613 /* CreateGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateGroupViewController.m; sourceTree = "<group>"; };
 		629604A51E7F6AAD00243613 /* ChooseTemplateImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseTemplateImageViewController.h; sourceTree = "<group>"; };
@@ -121,8 +127,12 @@
 				62B261BB1E9B26D500A5321B /* Alarm.storyboard */,
 				62B261BD1E9B33C900A5321B /* AlarmListViewController.h */,
 				62B261BE1E9B33C900A5321B /* AlarmListViewController.m */,
+				621B9ADE1E9BD276006404C3 /* AlarmTableViewCell.h */,
+				621B9ADF1E9BD276006404C3 /* AlarmTableViewCell.m */,
 				62B261C01E9B33DA00A5321B /* AddAlarmViewController.h */,
 				62B261C11E9B33DA00A5321B /* AddAlarmViewController.m */,
+				620BB1581E9BC3CB00E0FEF4 /* InputAlarmNameViewController.h */,
+				620BB1591E9BC3CB00E0FEF4 /* InputAlarmNameViewController.m */,
 			);
 			path = Alarm;
 			sourceTree = "<group>";
@@ -368,8 +378,10 @@
 				62A5371B1E7ED75E00859898 /* ControllerAddingViewController.m in Sources */,
 				629604A71E7F6AAD00243613 /* ChooseTemplateImageViewController.m in Sources */,
 				62E1D2771E7AC926002DCD40 /* AppDelegate.m in Sources */,
+				621B9AE01E9BD276006404C3 /* AlarmTableViewCell.m in Sources */,
 				62CE350D1E6F449E00D302E8 /* main.m in Sources */,
 				62999A8A1E80263A00DEF9B8 /* TemplateImageCollectionViewCell.m in Sources */,
+				620BB15A1E9BC3CB00E0FEF4 /* InputAlarmNameViewController.m in Sources */,
 				62B261BF1E9B33C900A5321B /* AlarmListViewController.m in Sources */,
 				62B261C21E9B33DA00A5321B /* AddAlarmViewController.m in Sources */,
 				62B261AB1E9B09EB00A5321B /* Device.m in Sources */,

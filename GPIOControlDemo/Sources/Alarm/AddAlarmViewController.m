@@ -7,27 +7,92 @@
 //
 
 #import "AddAlarmViewController.h"
+#import "InputAlarmNameViewController.h"
 
 @interface AddAlarmViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *iterationStatusLabel;
+@property (weak, nonatomic) IBOutlet UILabel *alarmNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *errorLabel;
 
 @end
 
 @implementation AddAlarmViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
+    self.errorLabel.hidden = YES;
 }
 
-/*
-#pragma mark - Navigation
+#pragma makr - Actions
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)showIterationMenu:(id)sender
+{
+    UIAlertController *iterationsAlertController = [UIAlertController alertControllerWithTitle:nil
+                                                                                       message:nil
+                                                                                preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction *onceIterationAction = [UIAlertAction actionWithTitle:@"Once"
+                                                                  style:UIAlertActionStyleDefault
+                                                                handler:^(UIAlertAction *action) {}]; // TODO:
+    
+    UIAlertAction *everydayIterationAction = [UIAlertAction actionWithTitle:@"Every day"
+                                                                      style:UIAlertActionStyleDefault
+                                                                    handler:^(UIAlertAction *action) {}]; // TODO:
+    
+    UIAlertAction *mondayFridayIterationAction = [UIAlertAction actionWithTitle:@"Monday - Friday"
+                                                                          style:UIAlertActionStyleDefault
+                                                                        handler:^(UIAlertAction *action) {}]; // TODO:
+    
+    UIAlertAction *customisedIterationAction = [UIAlertAction actionWithTitle:@"Customised"
+                                                                 style:UIAlertActionStyleDefault
+                                                               handler:^(UIAlertAction *action) {}]; // TODO: Implement
+    
+    [iterationsAlertController addAction:onceIterationAction];
+    [iterationsAlertController addAction:everydayIterationAction];
+    [iterationsAlertController addAction:mondayFridayIterationAction];
+    [iterationsAlertController addAction:customisedIterationAction];
+    [self presentViewController:iterationsAlertController animated:YES completion:nil];
 }
-*/
+
+- (IBAction)addAlarmName:(id)sender
+{
+    InputAlarmNameViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"InputAlarmNameViewControllerID"];
+    __weak AddAlarmViewController *wself = self;
+    vc.block = ^(NSString *alarmName)
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            wself.alarmNameLabel.text = alarmName;
+        });
+    };
+    vc.providesPresentationContextTransitionStyle = YES;
+    vc.definesPresentationContext = YES;
+    [self presentViewController:vc animated:YES completion:nil];
+}
+
+
+
+- (IBAction)addAlarm:(id)sender
+{
+    // TODO: Add time valiadtion for the new alarm
+//    if ([self validateAlarmTime]) {
+//        
+//    }
+}
+
+
+- (IBAction)dismissController:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - Private Methods
+
+- (BOOL)validateAlarmTime
+{
+    return NO;
+}
+
 
 @end
