@@ -10,12 +10,11 @@
 
 @interface Alarm ()
 
+@property (assign, nonatomic) NSInteger ID;
 @property (strong, nonatomic, nonnull) NSDate *time;
 @property (assign, nonatomic) AlarmAction action;
 @property (strong, nonatomic, nonnull) NSString *name;
 @property (strong, nonatomic, nonnull) NSString *iteration;
-@property (assign, nonatomic) BOOL isActive;
-@property (assign, nonatomic) NSInteger ID;
 
 @end
 
@@ -55,6 +54,27 @@
             self.isActive ? @"YES" : @"NO",
             self.ID
             ];
+}
+
+- (BOOL)isEqual:(Alarm *)object
+{
+    if (object == self)
+    {
+        return YES;
+    }
+    else if ([object isKindOfClass:self.class])
+    {
+        return ([object.time isEqual:self.time]);
+    }
+    return NO;
+}
+
+- (NSUInteger)hash
+{
+    NSUInteger hash = 0;
+    hash += self.time.hash;
+    hash += self.name.hash;
+    return hash;
 }
 
 @end

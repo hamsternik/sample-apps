@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Alarm : NSObject
-
 typedef NS_ENUM(NSInteger, AlarmAction)
 {
     AlarmActionPowerOff = 0,
@@ -17,12 +15,15 @@ typedef NS_ENUM(NSInteger, AlarmAction)
     AlarmActionToggle = 3
 };
 
+@interface Alarm : NSObject
+
+@property BOOL isActive;
+
+@property (readonly) NSInteger ID;
 @property (readonly, nonnull) NSDate *time;
 @property (readonly) AlarmAction action;
 @property (readonly, nonnull) NSString *name;
 @property (readonly, nonnull) NSString *iteration;
-@property (readonly) BOOL isActive;
-@property (readonly) NSInteger ID;
 
 - (nonnull instancetype)initWithTime:(nonnull NSDate *)time
                               action:(AlarmAction)action
