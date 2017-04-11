@@ -10,6 +10,8 @@
 #import "AlarmTableViewCell.h"
 #import "AddAlarmViewController.h"
 
+double const kAlarmTableViewCellHeight = 70.0;
+
 static NSString * const kAlarmTableViewCellID = @"AlarmTableViewCellID";
 static NSString * const kAddAlarmViewControllerID = @"AddAlarmViewControllerID";
 
@@ -27,9 +29,8 @@ static NSString * const kAddAlarmViewControllerID = @"AddAlarmViewControllerID";
 {
     [super viewDidLoad];
     
-    self.alarmsTableView.delegate = self;
-    self.alarmsTableView.dataSource = self;
-    
+    [self setupInitialData];
+    [self createStubAlarms]; // TODO: Stub Data only for testing
     [self checkAlarmList];
 }
 
@@ -55,7 +56,7 @@ static NSString * const kAddAlarmViewControllerID = @"AddAlarmViewControllerID";
     dateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
     dateFormatter.dateFormat = @"HH:mm";
     cell.timeLabel.text = [dateFormatter stringFromDate:alarm.time];
-    cell.actionLabel.text = alarm.action;
+    cell.actionLabel.text = alarm.actionTitle; // TOOD: FIX to work with UISegmented object
     cell.alarmNameLabel.text = alarm.name;
     cell.iterationStateLabel.text = alarm.iteration;
     cell.alarmStateButton.selected = alarm.isActive;
@@ -65,11 +66,16 @@ static NSString * const kAddAlarmViewControllerID = @"AddAlarmViewControllerID";
 
 #pragma mark - UITableViewDelegate
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return kAlarmTableViewCellHeight;
+}
+
 #pragma mark - Actions
 
 - (IBAction)changeAlarmState:(id)sender
 {
-    // TODO: !Impl
+    NSLog(@"Parents: %@", [sender superview]); // TOOD: make this
 }
 
 - (IBAction)addNewAlarm:(id)sender
@@ -96,6 +102,26 @@ static NSString * const kAddAlarmViewControllerID = @"AddAlarmViewControllerID";
         self.alarmsTableView.hidden = NO;
         self.emptyListLabel.hidden = YES;
     }
+}
+
+- (void)setupInitialData
+{
+    self.alarmsTableView.delegate = self;
+    self.alarmsTableView.dataSource = self;
+    
+    self.alarms = [NSMutableArray new];
+}
+
+- (void)createStubAlarms
+{
+    NSString *alarmTimeStr = @"12:40";
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    df.timeZone = [NSTimeZone defaultTimeZone];
+    df.dateFormat = @"HH:mm";
+    NSDate *date = [df dateFromString:alarmTimeStr];
+    
+    Alarm *first = [[Alarm alloc] initWithTime:date action:AlarmActionToggle name:@"Morning Alarm" iteration:@"Every day" isActive:YES ID:1];
+    [self.alarms addObject:first];
 }
 
 

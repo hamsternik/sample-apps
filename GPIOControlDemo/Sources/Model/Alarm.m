@@ -11,7 +11,7 @@
 @interface Alarm ()
 
 @property (strong, nonatomic, nonnull) NSDate *time;
-@property (strong, nonatomic, nonnull) NSString *action;
+@property (assign, nonatomic) AlarmAction action;
 @property (strong, nonatomic, nonnull) NSString *name;
 @property (strong, nonatomic, nonnull) NSString *iteration;
 @property (assign, nonatomic) BOOL isActive;
@@ -21,7 +21,11 @@
 
 @implementation Alarm
 
-- (instancetype)initWithTime:(NSDate *)time action:(NSString *)action name:(NSString *)name iteration:(NSString *)iteration isActive:(BOOL)isActive id:(NSInteger)ID
+- (nonnull instancetype)initWithTime:(nonnull NSDate *)time
+                              action:(AlarmAction)action
+                                name:(nonnull NSString *)name
+                           iteration:(nonnull NSString *)iteration
+                            isActive:(BOOL)isActive ID:(NSInteger)ID
 {
     self = [super init];
     if (self) {
@@ -35,12 +39,17 @@
     return self;
 }
 
+- (nonnull NSString *)actionTitle
+{
+    return self.action == AlarmActionPowerOff ? @"PowerOff" : (self.action == AlarmActionPowerOn ? @"PowerOn" : @"Toggle");
+}
+
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"Alarm %p : time %@, action %@, name %@, iteration %@, isActive %@, ID %ld",
             self,
             self.time,
-            self.action,
+            self.actionTitle,
             self.name,
             self.iteration,
             self.isActive ? @"YES" : @"NO",

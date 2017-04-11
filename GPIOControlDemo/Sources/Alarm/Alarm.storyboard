@@ -12,7 +12,7 @@
         <!--Alarm List View Controller-->
         <scene sceneID="1UC-ji-gEU">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="SIf-di-JQJ" customClass="AlarmListViewController" sceneMemberID="viewController">
+                <viewController id="SIf-di-JQJ" customClass="AlarmListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6ln-SP-6D8"/>
                         <viewControllerLayoutGuide type="bottom" id="lmk-v0-JGX"/>
@@ -22,49 +22,48 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pb9-BH-ACu" userLabel="Alarms Table View">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="595"/>
+                                <rect key="frame" x="0.0" y="24" width="375" height="571"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AlarmTableViewCellID" rowHeight="60" id="N9A-gV-SY0" customClass="AlarmTableViewCell">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AlarmTableViewCellID" rowHeight="70" id="N9A-gV-SY0" customClass="AlarmTableViewCell">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N9A-gV-SY0" id="qoP-VK-plL">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:40" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAD-vN-O4t" userLabel="Time Label">
-                                                    <rect key="frame" x="8" y="11" width="46" height="22"/>
+                                                    <rect key="frame" x="16" y="15" width="51.5" height="24"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="46" id="flG-Il-8DD"/>
+                                                        <constraint firstAttribute="width" constant="52" id="bHg-cD-klF"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Action" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjK-Ng-xVx" userLabel="Action Label">
-                                                    <rect key="frame" x="8" y="30" width="46" height="15"/>
+                                                    <rect key="frame" x="16" y="35.5" width="52" height="15"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="46" id="3dl-lB-bwL"/>
+                                                        <constraint firstAttribute="width" constant="52" id="3dl-lB-bwL"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Iteration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WDZ-Jx-dkQ">
-                                                    <rect key="frame" x="70" y="30" width="47" height="15"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <rect key="frame" x="84" y="35.5" width="49" height="15"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alarm name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q3g-xa-A4p" userLabel="Alarm name label">
-                                                    <rect key="frame" x="70" y="12" width="87" height="20"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <rect key="frame" x="83.5" y="16" width="96.5" height="21.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9B-hA-yxa" userLabel="isActive Button">
-                                                    <rect key="frame" x="313" y="14" width="54" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9B-hA-yxa" userLabel="isActive Button">
+                                                    <rect key="frame" x="305" y="20" width="54" height="30"/>
                                                     <state key="normal" title="isActive"/>
                                                     <connections>
                                                         <action selector="changeAlarmState:" destination="SIf-di-JQJ" eventType="touchUpInside" id="9Cs-mC-xWK"/>
@@ -72,11 +71,13 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="VAD-vN-O4t" firstAttribute="leading" secondItem="qoP-VK-plL" secondAttribute="leading" constant="8" id="9WC-K4-ggs"/>
+                                                <constraint firstItem="VAD-vN-O4t" firstAttribute="leading" secondItem="qoP-VK-plL" secondAttribute="leading" constant="16" id="9WC-K4-ggs"/>
                                                 <constraint firstItem="VAD-vN-O4t" firstAttribute="centerY" secondItem="qoP-VK-plL" secondAttribute="centerY" constant="-8" id="Jcu-4v-J8B"/>
+                                                <constraint firstAttribute="trailing" secondItem="b9B-hA-yxa" secondAttribute="trailing" constant="16" id="LBR-67-i3w"/>
                                                 <constraint firstItem="fjK-Ng-xVx" firstAttribute="centerY" secondItem="qoP-VK-plL" secondAttribute="centerY" constant="8" id="O4d-Xh-OdW"/>
                                                 <constraint firstItem="Q3g-xa-A4p" firstAttribute="centerY" secondItem="qoP-VK-plL" secondAttribute="centerY" constant="-8" id="c2x-g2-G8l"/>
-                                                <constraint firstItem="fjK-Ng-xVx" firstAttribute="leading" secondItem="qoP-VK-plL" secondAttribute="leading" constant="8" id="h5l-IQ-hnC"/>
+                                                <constraint firstItem="b9B-hA-yxa" firstAttribute="centerY" secondItem="qoP-VK-plL" secondAttribute="centerY" id="c4F-4g-cvr"/>
+                                                <constraint firstItem="fjK-Ng-xVx" firstAttribute="leading" secondItem="qoP-VK-plL" secondAttribute="leading" constant="16" id="h5l-IQ-hnC"/>
                                                 <constraint firstItem="WDZ-Jx-dkQ" firstAttribute="leading" secondItem="fjK-Ng-xVx" secondAttribute="trailing" constant="16" id="lxh-MI-9G3"/>
                                                 <constraint firstItem="Q3g-xa-A4p" firstAttribute="leading" secondItem="VAD-vN-O4t" secondAttribute="trailing" constant="16" id="md8-Wd-tpR"/>
                                                 <constraint firstItem="WDZ-Jx-dkQ" firstAttribute="centerY" secondItem="qoP-VK-plL" secondAttribute="centerY" constant="8" id="u3F-no-K8i"/>
@@ -97,7 +98,7 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here's no alarms yet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EAo-bk-knl" userLabel="Title Label">
-                                <rect key="frame" x="0.0" y="100" width="375" height="19.5"/>
+                                <rect key="frame" x="0.0" y="100" width="375" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -127,7 +128,7 @@
                             <constraint firstAttribute="trailing" secondItem="Pb9-BH-ACu" secondAttribute="trailing" id="KH0-8m-Y8P"/>
                             <constraint firstItem="3RW-P8-KAE" firstAttribute="top" secondItem="Pb9-BH-ACu" secondAttribute="bottom" constant="8" id="OKc-C3-dSE"/>
                             <constraint firstItem="Pb9-BH-ACu" firstAttribute="leading" secondItem="0sQ-gV-aFc" secondAttribute="leading" id="W29-rW-Y2G"/>
-                            <constraint firstItem="Pb9-BH-ACu" firstAttribute="top" secondItem="0sQ-gV-aFc" secondAttribute="top" id="hnQ-G2-iCE"/>
+                            <constraint firstItem="Pb9-BH-ACu" firstAttribute="top" secondItem="0sQ-gV-aFc" secondAttribute="top" constant="24" id="hnQ-G2-iCE"/>
                             <constraint firstItem="EAo-bk-knl" firstAttribute="top" secondItem="6ln-SP-6D8" secondAttribute="bottom" constant="80" id="jBq-ba-cgU"/>
                             <constraint firstItem="EAo-bk-knl" firstAttribute="leading" secondItem="0sQ-gV-aFc" secondAttribute="leading" id="k6x-Ui-bW7"/>
                             <constraint firstItem="lmk-v0-JGX" firstAttribute="top" secondItem="3RW-P8-KAE" secondAttribute="bottom" constant="16" id="sS0-ZE-R91"/>
