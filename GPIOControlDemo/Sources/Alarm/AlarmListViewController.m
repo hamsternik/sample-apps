@@ -76,7 +76,11 @@ static NSString * const kDefaultAlarmDateFormat = @"HH:mm";
 
 - (IBAction)changeAlarmState:(id)sender
 {
-    NSLog(@"Parents: %@", [sender superview]); // TOOD: make this
+    UITableViewCell *selectedCell = (UITableViewCell *) [[sender superview] superview];
+    NSIndexPath *indexPath = [self.alarmsTableView indexPathForCell:selectedCell];
+    UIButton *selectedButton = (UIButton *)sender;
+    selectedButton.selected = !selectedButton.selected;
+    [self updateAlarmState:selectedButton.selected forIndex:indexPath.row];
 }
 
 - (IBAction)addNewAlarm:(id)sender
@@ -123,6 +127,13 @@ static NSString * const kDefaultAlarmDateFormat = @"HH:mm";
     
     Alarm *first = [[Alarm alloc] initWithTime:date action:AlarmActionToggle name:@"Morning Alarm" iteration:@"Every day" isActive:YES ID:1];
     [self.alarms addObject:first];
+}
+
+- (void)updateAlarmState:(BOOL)state forIndex:(NSInteger)row
+{
+    Alarm *selectedAlarm = self.alarms[row];
+    selectedAlarm.isActive = state;
+    [self.alarms replaceObjectAtIndex:row withObject:selectedAlarm];
 }
 
 
