@@ -14,6 +14,7 @@ double const kAlarmTableViewCellHeight = 70.0;
 
 static NSString * const kAlarmTableViewCellID = @"AlarmTableViewCellID";
 static NSString * const kAddAlarmViewControllerID = @"AddAlarmViewControllerID";
+static NSString * const kDefaultAlarmDateFormat = @"HH:mm";
 
 @interface AlarmListViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -30,7 +31,7 @@ static NSString * const kAddAlarmViewControllerID = @"AddAlarmViewControllerID";
     [super viewDidLoad];
     
     [self setupInitialData];
-    [self createStubAlarms]; // TODO: Stub Data only for testing
+    [self createStubAlarms]; /// Stub Data
     [self checkAlarmList];
 }
 
@@ -54,7 +55,7 @@ static NSString * const kAddAlarmViewControllerID = @"AddAlarmViewControllerID";
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
-    dateFormatter.dateFormat = @"HH:mm";
+    dateFormatter.dateFormat = kDefaultAlarmDateFormat;
     cell.timeLabel.text = [dateFormatter stringFromDate:alarm.time];
     cell.actionLabel.text = alarm.actionTitle; // TOOD: FIX to work with UISegmented object
     cell.alarmNameLabel.text = alarm.name;
@@ -117,7 +118,7 @@ static NSString * const kAddAlarmViewControllerID = @"AddAlarmViewControllerID";
     NSString *alarmTimeStr = @"12:40";
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     df.timeZone = [NSTimeZone defaultTimeZone];
-    df.dateFormat = @"HH:mm";
+    df.dateFormat = kDefaultAlarmDateFormat;
     NSDate *date = [df dateFromString:alarmTimeStr];
     
     Alarm *first = [[Alarm alloc] initWithTime:date action:AlarmActionToggle name:@"Morning Alarm" iteration:@"Every day" isActive:YES ID:1];
